@@ -26,6 +26,6 @@ class Personnage:
         self.y -=1
 
     def position(self):
-        print("position actuelle : ",self.x,", ",self.y)
+        return(self.x,self.y)
 
 
