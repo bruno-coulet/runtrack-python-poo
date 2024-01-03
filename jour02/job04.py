@@ -1,12 +1,12 @@
 # classe  Student qui a comme attributs privés un nom, un prénom, un numéro d’étudiants et un nombre de crédits par défaut à zéro.
-# Ajouter l’attribut privé nommé level dans le constructeur de la classe Student qui prend en valeur la méthode studentEval.
+# Ajouter l’attribut privé nommé level dans le constructeur de la classe Student qui prend en valeur la méthode __studentEval.
 class Student:
     def __init__(self, nom, prenom, numero, credits, niveau):
         self.__name = nom
         self.__first_name = prenom
         self.__number = numero
         self.__points = 0
-        self.__level = self.studentEval()
+        self.__level = self.__studentEval()
 
 # La méthode add_credits permet d’ajouter un nombre de crédits au total de celui de l’étudiant.
 # Ce mutateur doit s’assurer que la valeur passée en argument est supérieure à zéro pour garantir l’intégrité
@@ -20,13 +20,13 @@ class Student:
     def get_credits(self):
         return self.__points
 
-# créer une méthode nommée studentEval qui sera privée Cette méthode retourne 
+# créer une méthode nommée __studentEval qui sera privée Cette méthode retourne 
 # “Excellent”   si le nombre de crédits est égal ou supérieur à 90
 # “Très bien”   si le nombre est supérieur ou égal à 80
 # “Bien”        si le nombre est supérieur ou égale à 70
 # “Passable”    si égale ou supérieure à 60
 # “Insuffisant” si inférieur à 60. 
-    def studentEval(self):
+    def __studentEval(self):
         if self.__points>=90:
             return "Excellent"
         elif self.__points>=80:
@@ -43,7 +43,7 @@ class Student:
         print("Nom :", self.__name)
         print("Prénom :", self.__first_name)
         print("Identifiant :", self.__number)
-        print("Niveau :", self.studentEval())
+        print("Niveau :", self.__studentEval())
         
 
 # Instancier un objet représentant l’étudiant John Doe qui possède le numéro d’étudiant 145. 
@@ -56,7 +56,7 @@ John_Doe.add_credits(5)
 print("Total de crédits de John Doe :", John_Doe.get_credits())
 
 # Afficher les informations de l'étudiant John Doe
-print("Ci dessous le résultat de la méthode studentInfo :")
+print("Ci dessous le résultat de la méthode studentInfo")
 John_Doe.studentInfo()
 
 
