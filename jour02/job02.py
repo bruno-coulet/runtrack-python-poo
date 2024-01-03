@@ -23,27 +23,31 @@ class Livre:
 
     def set_page_number(self, pages):
         self.__page_number = pages
-          
 
-# Pour changer le nombre de pages, Ce dernier doit être un nombre entier
-# positif, sinon la valeur n’est pas changée et un message d’erreur est affiché.
-
+    # Pour changer le nombre de pages     
     def set_page_number(self, pages):
-        # Pour changer le nombre de pages, ce dernier doit être un nombre entier positif
         try:
+            # ce dernier doit être un nombre entier
             pages = int(pages)
+            #  positif
             if pages > 0:
                 self.__page_number = pages
+            # sinon la valeur n’est pas changée et un message d’erreur est affiché.
             else:
                 print("Erreur : Le nombre de pages doit être un nombre entier positif.")
         except ValueError:
             print("Erreur : Veuillez entrer un nombre entier pour le nombre de pages.")
 
-            
 
+# création de l'objet "les misérables" qui fait 100 pages
 les_miserables = Livre("Les miserables","Victor Hugo", 1000)
 print(les_miserables.get_page_number())
+# Modifie le nombre de pages
 les_miserables.set_page_number(2000)
 print(les_miserables.get_page_number())
-les_miserables.set_page_number(-1500.5)
+# Modifie le nombre de pages en flottant
+les_miserables.set_page_number(1500.3)
+print(les_miserables.get_page_number())
+# Modifie le nombre de pages en négatif
+les_miserables.set_page_number(-1500)
 print(les_miserables.get_page_number())
