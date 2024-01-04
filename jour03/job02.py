@@ -29,26 +29,26 @@ class CompteBancaire:
         print(f"afficher({self.__number})\nnuméro de compte : {self.__number}\nNom : {self.__LastName}\nPrénom : {self.__firstName}\nSolde : {self.__credit} brouzoufs\n")
 
     def afficherSolde(self):
-        print(f"\nafficherSolde({self.__number})\nLe {self.__number} présente un solde de {self.__credit} brouzoufs\n")     
+        print(f"\nLe {self.__number} présente un solde de {self.__credit} brouzoufs")     
 
     def retrait (self, debit):
         if self.__credit > debit or self.__overdraft == True:
             self.debit = int(debit)
             self.__credit -= self.debit
-            print(f"retrait({debit})\nLe nouveau solde est : {self.__credit} brouzoufs\n")
+            print(f"\nretrait({debit})\nLe nouveau solde est : {self.__credit} brouzoufs")
         # Veillez à ce que le compte possède bien le montant disponible sinon un message d’erreur est affiché.
         elif self.__credit < debit and self.__overdraft == False:
-            print (f"Le découvert n'est pas autorisé, faites un rerait moins important.\n")
+            print (f"\nLe découvert n'est pas autorisé, faites un rerait moins important.")
 
     def agios(self):
         #  A faire une fois par mois
         if self.__overdraft == True and self.__credit < 0 :
             self.__credit = self.__credit + (self.__credit*0.05)
-            print(f"agios()\nDes agios ont été appliqués. Le solde du {self.__number} est désormais de {self.__credit} brouzoufs\n")
+            print(f"\nDes agios ont été appliqués. Le solde du {self.__number} est désormais de {self.__credit} brouzoufs")
 
     def versement(self, versement):
             self.__credit += versement
-            print(f"versement({versement})\nAprès versement, le {self.__number} présente un solde de {self.__credit} brouzoufs\n")
+            print(f"\nAprès versement, le {self.__number} présente un solde de {self.__credit} brouzoufs")
             return self.__credit
 
     def virement(self, ref, compte, montant):
@@ -56,9 +56,9 @@ class CompteBancaire:
         if self.__credit >= montant:
             self.__credit -= montant
             compte.versement(montant)
-            print(f"Virement de {montant} brouzoufs vers le compte {compte.__number} effectué.\n")
+            print(f"\nVirement de {montant} brouzoufs vers le compte {compte.__number} effectué.\n")
         else:
-            print("Erreur : Solde insuffisant pour effectuer le virement.\n")
+            print("\nErreur : Solde insuffisant pour effectuer le virement.")
 
         # compte.set_credit = compte.get_credit() + montant
         # print(f"virement de {self.amount} brouzoufs\n")
