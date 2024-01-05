@@ -16,7 +16,7 @@ class Rectangle(Forme):
         largeur = self.largeur
         hauteur = self.hauteur
         aire =  largeur * hauteur
-        print (aire)
+        print (f"L'aire du rectangle ({self.largeur} x {self.hauteur}) est : {aire} m3")
         return aire
 
 # Écrire en console le résultat de la méthode aire de la classe Rectangle.
