@@ -37,7 +37,7 @@ class Moto(Vehicule):
         print(f"marque = {self.marque}\nmodèle = {self.modèle}\nannée = {self.année}\nprix = {self.prix}\nroue = {self.roue}\n")
 
     def demarrer(self):
-        print("Attention, je roule avec ma voiture à 2 roues.")
+        print("Attention, je roule avec ma moto à 2 roues.")
 
 
 
